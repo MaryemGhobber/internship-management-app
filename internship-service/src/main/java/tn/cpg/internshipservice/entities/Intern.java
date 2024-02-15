@@ -18,6 +18,7 @@ public class Intern {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idIntern;
     private int cin;
+    private String password;
     private String firstname;
     private String lastname;
     private String mail;
