@@ -1,10 +1,8 @@
 package tn.cpg.internshipservice.dto;
 
 
-
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 import tn.cpg.internshipservice.entities.Internship;
 import tn.cpg.internshipservice.enums.ClassLevel;
 import tn.cpg.internshipservice.enums.Level;
@@ -15,8 +13,17 @@ import java.time.LocalDate;
 /**
  * DTO for {@link tn.cpg.internshipservice.entities.Intern}
  */
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @SuperBuilder
+public class InternDto {
+    private Long idIntern;
+    private int cin;
+    private  String firstname;
+    private  String lastname;
+    private  String mail;
+    private  int phoneNumber;
+    private   LocalDate birthdate;
+    private  Level level;
+    private  ClassLevel classLevel;
 
-public record InternDto(Long idIntern, int cin, String firstname, String lastname, String mail, int phoneNumber,
-                        LocalDate birthdate, Level level, ClassLevel classLevel,
-                        Internship internship) implements Serializable {
+    private  Internship internship;
 }
