@@ -49,7 +49,7 @@ public class InternshipService implements CrudService<InternshipDto> {
         Internship savedInternship = internshipRepository.findById(id).orElseThrow();
         Internship internshipToUpdate = InternshipMapper.INSTANCE.dtoToInternship(dto);
         savedInternship.setInternshipname(internshipToUpdate.getInternshipname());
-        savedInternship.setInternList(internshipToUpdate.getInternList());
+      //  savedInternship.setInternList(internshipToUpdate.getInternList());
         return InternshipMapper.INSTANCE.internshipToDto(internshipRepository.save(savedInternship));
     }
 }

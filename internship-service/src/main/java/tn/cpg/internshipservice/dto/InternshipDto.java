@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+import tn.cpg.internshipservice.entities.Candidacy;
 import tn.cpg.internshipservice.entities.Intern;
 import tn.cpg.internshipservice.entities.Internship;
 import tn.cpg.internshipservice.enums.ClassLevel;
@@ -21,9 +22,14 @@ import java.util.List;
  * DTO for {@link tn.cpg.internshipservice.entities.Internship}
  */
 
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @SuperBuilder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder
 public class InternshipDto {
     private Long idInternship;
     private String internshipname;
-//    private List<Intern> internList;
+    //    private List<Intern> internList;
+    private Candidacy candidacy;
 }

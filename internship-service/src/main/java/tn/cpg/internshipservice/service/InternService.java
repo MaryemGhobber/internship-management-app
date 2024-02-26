@@ -54,7 +54,7 @@ public class InternService implements CrudService<InternDto> {
         savedIntern.setBirthdate(internToUpdate.getBirthdate());
         savedIntern.setLevel(internToUpdate.getLevel());
         savedIntern.setClassLevel(internToUpdate.getClassLevel());
-        savedIntern.setInternship(internToUpdate.getInternship());
+       // savedIntern.setInternship(internToUpdate.getInternship());
 
         return InternMapper.INSTANCE.internToDto(internRepository.save(savedIntern));
     }
