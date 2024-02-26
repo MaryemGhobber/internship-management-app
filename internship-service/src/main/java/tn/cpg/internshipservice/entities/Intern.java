@@ -6,6 +6,7 @@ import tn.cpg.internshipservice.enums.ClassLevel;
 import tn.cpg.internshipservice.enums.Level;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Builder
 @AllArgsConstructor
@@ -31,6 +32,7 @@ public class Intern {
     @ManyToOne
     @JoinColumn(name = "internship_id")
     private Internship internship;
-
+    @OneToMany(mappedBy = "intern")
+    private List<Candidacy> candidacyList;
 
 }

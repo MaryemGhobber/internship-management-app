@@ -20,6 +20,7 @@ public class Internship {
     @JsonIgnore
     @OneToMany(mappedBy = "internship")
     private List<Intern> internList;
-
+    @OneToMany(mappedBy = "internship")
+    private List<Candidacy> candidacyList;
 
 }
