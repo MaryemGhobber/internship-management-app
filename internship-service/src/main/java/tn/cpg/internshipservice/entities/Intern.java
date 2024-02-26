@@ -30,9 +30,7 @@ public class Intern {
     private Level level;
     @Enumerated(EnumType.STRING)
     private ClassLevel classLevel;
-    /*@ManyToOne
-    @JoinColumn(name = "internship_id")
-    private Internship internship;*/
+
     @JsonIgnore
     @OneToMany(mappedBy = "intern")
     private List<Candidacy> candidacyList;

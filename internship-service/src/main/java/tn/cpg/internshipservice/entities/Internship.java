@@ -17,9 +17,7 @@ public class Internship {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idInternship;
     private String internshipname;
-    /* @JsonIgnore
-     @OneToMany(mappedBy = "internship")
-     private List<Intern> internList;*/
+
     @JsonIgnore
     @OneToMany(mappedBy = "internship")
     private List<Candidacy> candidacyList;
