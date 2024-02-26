@@ -9,10 +9,12 @@ public class Candidacy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCandidacy;
-    private LocalDate dateSoumission;
+    private LocalDate dateSubmission;
     @ManyToOne
+    @JoinColumn(name = "intern_id")
     private Intern intern;
 
     @ManyToOne
+    @JoinColumn(name = "internship_id")
     private Internship internship;
 }

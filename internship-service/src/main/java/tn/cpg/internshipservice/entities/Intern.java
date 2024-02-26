@@ -1,5 +1,6 @@
 package tn.cpg.internshipservice.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import tn.cpg.internshipservice.enums.ClassLevel;
@@ -29,9 +30,10 @@ public class Intern {
     private Level level;
     @Enumerated(EnumType.STRING)
     private ClassLevel classLevel;
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "internship_id")
-    private Internship internship;
+    private Internship internship;*/
+    @JsonIgnore
     @OneToMany(mappedBy = "intern")
     private List<Candidacy> candidacyList;
 

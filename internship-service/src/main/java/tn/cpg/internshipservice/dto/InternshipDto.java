@@ -25,5 +25,5 @@ import java.util.List;
 public class InternshipDto {
     private Long idInternship;
     private String internshipname;
-    private List<Intern> internList;
+//    private List<Intern> internList;
 }
