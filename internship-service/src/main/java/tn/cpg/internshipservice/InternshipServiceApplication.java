@@ -19,7 +19,7 @@ public class InternshipServiceApplication {
         SpringApplication.run(InternshipServiceApplication.class, args);
     }
 
-   /* @Bean
+/*  @Bean
     CommandLineRunner commandLineRunner(InternRepository internRepository) {
         return args -> {
             List<Intern> internList = List.of(

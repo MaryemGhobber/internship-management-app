@@ -44,7 +44,7 @@ public class InternService implements CrudService<InternDto> {
 
     @Override
     public InternDto update(Long id, InternDto dto) {
-        Intern savedIntern = internRepository.findById(id).orElseThrow();
+       Intern savedIntern = internRepository.findById(id).orElseThrow();
         Intern internToUpdate = InternMapper.INSTANCE.dtoToIntern(dto);
         savedIntern.setFirstname(internToUpdate.getFirstname());
         savedIntern.setLastname(internToUpdate.getLastname());
