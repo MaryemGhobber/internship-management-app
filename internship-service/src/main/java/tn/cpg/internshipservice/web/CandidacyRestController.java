@@ -54,8 +54,8 @@ public class CandidacyRestController {
 
 
     }
-
-    @PutMapping("updateCandidacy/{id}")
+//no update
+   /* @PutMapping("updateCandidacy/{id}")
     public ResponseEntity<String> update(@PathVariable Long id, @RequestBody CandidacyDto dto) {
         Optional<CandidacyDto> optional = candidacyService.findById(id);
         optional.ifPresent(n -> candidacyService.update(id, dto));
@@ -63,5 +63,5 @@ public class CandidacyRestController {
         return optional.map(n ->
                         new ResponseEntity<>("Object with id " + id + " was updated.", HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND.getReasonPhrase(), HttpStatus.NOT_FOUND));
-    }
+    }*/
 }

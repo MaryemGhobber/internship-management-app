@@ -1,9 +1,6 @@
 package tn.cpg.internshipservice.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 import tn.cpg.internshipservice.entities.Intern;
 import tn.cpg.internshipservice.entities.Internship;
@@ -18,6 +15,8 @@ import java.time.LocalDate;
 public class CandidacyDto {
     private Long idCandidacy;
     private LocalDate dateSubmission;
+    @Builder.Default
+    private Boolean status=false;
     private Intern intern;
     private Internship internship;
 }

@@ -16,6 +16,8 @@ public class Candidacy {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCandidacy;
     private LocalDate dateSubmission;
+    @Builder.Default
+    private boolean status=false;
     @ManyToOne
     //@JoinColumn(name = "intern_id")
     private Intern intern;
