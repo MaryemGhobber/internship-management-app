@@ -4,7 +4,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.cpg.internshipservice.dto.CandidacyDto;
+import tn.cpg.internshipservice.dto.InternshipDto;
+import tn.cpg.internshipservice.entities.Internship;
 import tn.cpg.internshipservice.service.CandidacyService;
+import tn.cpg.internshipservice.service.InternshipService;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,8 +17,10 @@ public class CandidacyRestController {
     private final CandidacyService candidacyService;
 
 
+
     public CandidacyRestController(CandidacyService candidacyService) {
         this.candidacyService = candidacyService;
+
     }
     @GetMapping("/candidacies")
     public ResponseEntity<List<CandidacyDto>> findAll() {
@@ -64,4 +69,19 @@ public class CandidacyRestController {
                         new ResponseEntity<>("Object with id " + id + " was updated.", HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND.getReasonPhrase(), HttpStatus.NOT_FOUND));
     }*/
+
+    @GetMapping("/candidacie/{cin}")
+    public ResponseEntity<CandidacyDto> findByCin(@PathVariable int cin) {
+        Optional<CandidacyDto> candidacyDtoOptional = candidacyService.findCandidaciesByInternCin(cin);
+
+        return candidacyDtoOptional.map(candidacyDto -> new ResponseEntity<>(candidacyDto, HttpStatus.OK))
+                .orElse(new ResponseEntity<>(null, HttpStatus.NOT_FOUND));
+    }
+    @GetMapping("/candidacy/{id}")
+    public ResponseEntity<List<CandidacyDto>> findByInternship(@PathVariable Long id) {
+
+        List<CandidacyDto> candidacyDtoOptional = candidacyService.findCandidaciesByInternship(id);
+
+        return new ResponseEntity<>(candidacyDtoOptional, HttpStatus.OK);
+    }
 }

@@ -2,12 +2,13 @@ package tn.cpg.internshipservice.service;
 
 import org.springframework.stereotype.Service;
 import tn.cpg.internshipservice.dto.CandidacyDto;
-import tn.cpg.internshipservice.dto.InternDto;
 import tn.cpg.internshipservice.entities.Candidacy;
 import tn.cpg.internshipservice.entities.Intern;
+import tn.cpg.internshipservice.entities.Internship;
 import tn.cpg.internshipservice.mapper.CandidacyMapper;
-import tn.cpg.internshipservice.mapper.InternMapper;
 import tn.cpg.internshipservice.repository.CandidacyRepository;
+import tn.cpg.internshipservice.repository.InternRepository;
+import tn.cpg.internshipservice.repository.InternshipRepository;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,9 +18,13 @@ import java.util.Optional;
 @Service
 public class CandidacyService implements CrudService<CandidacyDto> {
     private final CandidacyRepository candidacyRepository;
+    private final InternRepository internRepository;
+    private final InternshipRepository internshipRepository;
 
-    public CandidacyService(CandidacyRepository candidacyRepository) {
+    public CandidacyService(CandidacyRepository candidacyRepository, InternRepository internRepository, InternshipRepository internshipRepository) {
         this.candidacyRepository = candidacyRepository;
+        this.internRepository = internRepository;
+        this.internshipRepository = internshipRepository;
     }
 
     @Override
@@ -59,5 +64,20 @@ public class CandidacyService implements CrudService<CandidacyDto> {
 
 
         return CandidacyMapper.INSTANCE.candidacyToDto(candidacyRepository.save(savedCandidacy));
+    }
+
+    public Optional<CandidacyDto> findCandidaciesByInternCin(int cin) {
+        Intern internOptional = internRepository.findByCin(cin);
+
+        Optional<Candidacy> candidacyOptional = Optional.ofNullable(candidacyRepository.findCandidaciesByIntern(internOptional));
+        return candidacyOptional.map(CandidacyMapper.INSTANCE::candidacyToDto);
+    }
+
+    public List<CandidacyDto> findCandidaciesByInternship(Long id) {
+        Optional<Internship> internshipOptional = internshipRepository.findById(id);
+        List<CandidacyDto> list = new ArrayList<>();
+        candidacyRepository.findCandidaciesByInternship(internshipOptional).forEach(candidacy -> list.add(CandidacyMapper.INSTANCE.candidacyToDto(candidacy)));
+        return list;
+
     }
 }
