@@ -49,6 +49,7 @@ public class SupervisorService implements CrudService<SupervisorDto>{
         savedSupervisor.setFirstname(supervisorToUpdate.getFirstname());
         savedSupervisor.setLastname(supervisorToUpdate.getLastname());
         savedSupervisor.setCin(supervisorToUpdate.getCin());
+        savedSupervisor.setPassword(supervisorToUpdate.getPassword());
         savedSupervisor.setMail(supervisorToUpdate.getMail());
         savedSupervisor.setPhoneNumber(supervisorToUpdate.getPhoneNumber());
         savedSupervisor.setBirthdate(supervisorToUpdate.getBirthdate());

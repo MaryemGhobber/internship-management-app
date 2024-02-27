@@ -4,7 +4,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.cpg.internshipservice.dto.InternDto;
-import tn.cpg.internshipservice.entities.Intern;
 import tn.cpg.internshipservice.service.InternService;
 
 import java.util.List;
