@@ -30,6 +30,6 @@ public class InternDto {
     private Level level;
     private ClassLevel classLevel;
 
-    //  private  Internship internship;
-    private Candidacy candidacy;
+    private  Internship internship;
+   // private Candidacy candidacy;
 }

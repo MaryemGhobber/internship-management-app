@@ -3,6 +3,7 @@ package tn.cpg.internshipservice.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import tn.cpg.internshipservice.enums.ClassLevel;
 import tn.cpg.internshipservice.enums.Level;
 
@@ -15,6 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+//stagiaire
 public class Intern {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,8 +33,10 @@ public class Intern {
     @Enumerated(EnumType.STRING)
     private ClassLevel classLevel;
 
-    @JsonIgnore
+  /*  @JsonIgnore
     @OneToMany(mappedBy = "intern")
-    private List<Candidacy> candidacyList;
+    private List<Candidacy> candidacyList;*/
+  @ManyToOne
+  private Internship internship;
 
 }

@@ -43,6 +43,10 @@ public class CandidacyService implements CrudService<CandidacyDto> {
     @Override
     public CandidacyDto save(CandidacyDto dto) {
         dto.setDateSubmission(LocalDate.now());
+
+        Intern intern = internRepository.findById(dto.getIntern().getIdIntern()).orElseThrow();
+        intern.setInternship(dto.getInternship());
+        internRepository.save(intern);
         Candidacy candidacy = CandidacyMapper.INSTANCE.dtoToCandidacy(dto);
 
         return CandidacyMapper.INSTANCE.candidacyToDto(candidacyRepository.save(candidacy));
