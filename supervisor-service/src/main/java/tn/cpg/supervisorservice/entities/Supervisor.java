@@ -24,4 +24,5 @@ public class Supervisor {
     private String mail;
     private int phoneNumber;
     private LocalDate birthdate;
+
 }

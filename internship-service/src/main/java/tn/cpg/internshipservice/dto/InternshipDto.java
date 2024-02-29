@@ -32,4 +32,5 @@ public class InternshipDto {
     private String internshipname;
     //    private List<Intern> internList;
     private Candidacy candidacy;
+    private Long supervisorId;
 }
