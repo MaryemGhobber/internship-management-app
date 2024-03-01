@@ -57,4 +57,5 @@ public class SupervisorService implements CrudService<SupervisorDto>{
 
         return SupervisorMapper.INSTANCE.supervisorToDto(supervisorRepository.save(savedSupervisor));
     }
+
 }

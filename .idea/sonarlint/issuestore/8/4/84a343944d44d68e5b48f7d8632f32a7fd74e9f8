@@ -1,5 +1,6 @@
 
-b
-java:S1128"ERemove this unused import 'tn.cpg.internshipservice.entities.Intern'.(ÚÔÚ“8‘Üì¥Ş1
-f
-java:S1128"IRemove this unused import 'tn.cpg.internshipservice.mapper.InternMapper'.(˜‡áŸ8’Üì¥Ş1
+y
+java:S3655("\Call "internOptional.isPresent()" or "!internOptional.isEmpty()" before accessing the value.(—ÇÎµ8Ó“À­ß1
+X	java:S125"<This block of commented-out lines of code should be removed.(ÙùÏÅ8×“À­ß1
+X	java:S125="<This block of commented-out lines of code should be removed.(­µâ¥8Ü“À­ß1
+X	java:S125A"<This block of commented-out lines of code should be removed.(ÕËÑ8İ“À­ß1

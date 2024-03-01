@@ -1,0 +1,14 @@
+
+¦
+java:S4449$"ˆAnnotate the parameter with @javax.annotation.Nullable in constructor declaration, or make sure that null can not be passed as argument.(– ¨ 8Ñ¡±§ß1
+¦
+java:S4449N"ˆAnnotate the parameter with @javax.annotation.Nullable in constructor declaration, or make sure that null can not be passed as argument.(– ¨ 8Ó¡±§ß1
+W	java:S1255"<This block of commented-out lines of code should be removed.(ö•‚68‰•ÇÏÞ1
+X	java:S125@"<This block of commented-out lines of code should be removed.(¬›Öš8Ž•ÇÏÞ1
+i
+java:S1128"GRemove this unused import 'tn.cpg.internshipservice.dto.InternshipDto'.(áŒ“Ãûÿÿÿÿ8æ¡±§ß1
+f
+java:S1128"IRemove this unused import 'tn.cpg.internshipservice.entities.Internship'.(¹Ì’ö8æ¡±§ß1
+l
+java:S1128
+"ORemove this unused import 'tn.cpg.internshipservice.service.InternshipService'.(ßîÙ8ç¡±§ß1

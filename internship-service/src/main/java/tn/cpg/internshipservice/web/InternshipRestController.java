@@ -3,8 +3,10 @@ package tn.cpg.internshipservice.web;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import tn.cpg.internshipservice.dto.InternDto;
+import tn.cpg.internshipservice.clients.SupervisorRestClient;
 import tn.cpg.internshipservice.dto.InternshipDto;
+import tn.cpg.internshipservice.entities.Internship;
+import tn.cpg.internshipservice.model.Supervisor;
 import tn.cpg.internshipservice.service.InternshipService;
 
 import java.util.List;
@@ -14,8 +16,10 @@ import java.util.Optional;
 public class InternshipRestController {
     private final InternshipService internshipService;
 
+
     public InternshipRestController(InternshipService internshipService) {
         this.internshipService = internshipService;
+
     }
 
     @GetMapping("/internships")
@@ -28,13 +32,13 @@ public class InternshipRestController {
     @GetMapping("/internships/{id}")
     public ResponseEntity<InternshipDto> findById(@PathVariable Long id) {
         Optional<InternshipDto> internshipDtoOptional = internshipService.findById(id);
-
         return internshipDtoOptional.map(internshipDto -> new ResponseEntity<>(internshipDto, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(null, HttpStatus.NOT_FOUND));
     }
 
     @PostMapping("/addInternship")
     public ResponseEntity<InternshipDto> save(@RequestBody InternshipDto dto) {
+
         return new ResponseEntity<>(internshipService.save(dto), HttpStatus.CREATED);
     }
 

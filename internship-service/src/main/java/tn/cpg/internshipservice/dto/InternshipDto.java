@@ -13,6 +13,7 @@ import tn.cpg.internshipservice.entities.Intern;
 import tn.cpg.internshipservice.entities.Internship;
 import tn.cpg.internshipservice.enums.ClassLevel;
 import tn.cpg.internshipservice.enums.Level;
+import tn.cpg.internshipservice.model.Supervisor;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -34,4 +35,5 @@ public class InternshipDto {
     private List<Candidacy> candidacyList;
     private Long supervisorId;
     private List<Intern> internList;
+    private Supervisor supervisor;
 }

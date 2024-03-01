@@ -1,2 +1,6 @@
 
-Q	java:S125"<This block of commented-out lines of code should be removed.(±ùŞ§
+X	java:S125"<This block of commented-out lines of code should be removed.(±ùŞ§8¯Â»¯Ş1
+T
+java:S1128"2Remove this unused import 'org.mapstruct.Mapping'.(•Š–øûÿÿÿÿ8°Â»¯Ş1
+U
+java:S1128"8Remove this unused import 'org.mapstruct.MappingTarget'.(ö’è¾8°Â»¯Ş1

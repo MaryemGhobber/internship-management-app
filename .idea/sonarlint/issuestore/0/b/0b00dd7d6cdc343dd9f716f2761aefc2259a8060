@@ -1,6 +1,4 @@
 
 Ÿ
-java:S4449 "ˆAnnotate the parameter with @javax.annotation.Nullable in constructor declaration, or make sure that null can not be passed as argument.(– ¨ 
-P	java:S1251"<This block of commented-out lines of code should be removed.(ö•‚6
-[
-java:S1128"ERemove this unused import 'tn.cpg.internshipservice.entities.Intern'.(ÚÔÚ“
+java:S4449"ˆAnnotate the parameter with @javax.annotation.Nullable in constructor declaration, or make sure that null can not be passed as argument.(– ¨ 
+P	java:S1250"<This block of commented-out lines of code should be removed.(ö•‚6

@@ -1,18 +1,11 @@
 package tn.cpg.internshipservice;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import tn.cpg.internshipservice.entities.Intern;
-import tn.cpg.internshipservice.enums.ClassLevel;
-import tn.cpg.internshipservice.enums.Level;
-import tn.cpg.internshipservice.repository.InternRepository;
-
-import java.time.LocalDate;
-import java.util.List;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
+@EnableFeignClients
 public class InternshipServiceApplication {
 
     public static void main(String[] args) {
