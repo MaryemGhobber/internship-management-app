@@ -1,6 +1,6 @@
 
-y
-java:S3655("\Call "internOptional.isPresent()" or "!internOptional.isEmpty()" before accessing the value.(—ÇÎµ8Ó“À­ß1
-X	java:S125"<This block of commented-out lines of code should be removed.(ÙùÏÅ8×“À­ß1
-X	java:S125="<This block of commented-out lines of code should be removed.(­µâ¥8Ü“À­ß1
-X	java:S125A"<This block of commented-out lines of code should be removed.(ÕËÑ8Ý“À­ß1
+]	java:S125@"<This block of commented-out lines of code should be removed.(Á¹ïûøÿÿÿÿ8¹ªŠÍß1
+G	java:S106D"+Replace this use of System.out by a logger.(õ»Û¼8¹ªŠÍß1
+X	java:S125C"<This block of commented-out lines of code should be removed.(Žæ­ù8¹ªŠÍß1
+L	java:S106E"+Replace this use of System.out by a logger.(ÏÛ˜Îýÿÿÿÿ8ºªŠÍß1
+X	java:S125I"<This block of commented-out lines of code should be removed.(ÕËÑ8ºªŠÍß1

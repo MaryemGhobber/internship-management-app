@@ -63,4 +63,11 @@ public class InternshipRestController {
                         new ResponseEntity<>("Object with id " + id + " was updated.", HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND.getReasonPhrase(), HttpStatus.NOT_FOUND));
     }
+    @GetMapping("/internships/supervisor/{id}")
+    public ResponseEntity<List<InternshipDto>> findAllInternshipsBySupervisorId(@PathVariable Long id) {
+        Optional<List<InternshipDto>> internshipDtoOptional = Optional.ofNullable(internshipService.findAllInternshipsBySupervisorId(id));
+        return internshipDtoOptional.map(internshipDto -> new ResponseEntity<>(internshipDto, HttpStatus.OK))
+                .orElse(new ResponseEntity<>(null, HttpStatus.NOT_FOUND));
+
+    }
 }

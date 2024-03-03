@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class SupervisorService implements CrudService<SupervisorDto>{
+public class SupervisorService implements CrudService<SupervisorDto> {
     private final SupervisorRepository supervisorRepository;
 
     public SupervisorService(SupervisorRepository supervisorRepository) {
@@ -39,7 +39,7 @@ public class SupervisorService implements CrudService<SupervisorDto>{
 
     @Override
     public void delete(Long id) {
-       supervisorRepository.deleteById(id);
+        supervisorRepository.deleteById(id);
     }
 
     @Override

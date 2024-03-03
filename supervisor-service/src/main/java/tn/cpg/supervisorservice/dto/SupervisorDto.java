@@ -22,4 +22,5 @@ public class SupervisorDto {
     private String mail;
     private int phoneNumber;
     private LocalDate birthdate;
+
 }

@@ -7,7 +7,6 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Builder
@@ -16,7 +15,8 @@ import java.util.List;
 @Getter
 @Setter
 public class Supervisor {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idSupervisor;
     private int cin;
     private String password;
