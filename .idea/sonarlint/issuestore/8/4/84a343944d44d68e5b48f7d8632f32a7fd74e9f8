@@ -1,6 +1,11 @@
 
-]	java:S125@"<This block of commented-out lines of code should be removed.(Á¹ïûøÿÿÿÿ8¹ªŠÍß1
-G	java:S106D"+Replace this use of System.out by a logger.(õ»Û¼8¹ªŠÍß1
-X	java:S125C"<This block of commented-out lines of code should be removed.(Žæ­ù8¹ªŠÍß1
-L	java:S106E"+Replace this use of System.out by a logger.(ÏÛ˜Îýÿÿÿÿ8ºªŠÍß1
-X	java:S125I"<This block of commented-out lines of code should be removed.(ÕËÑ8ºªŠÍß1
+y
+java:S3655-"\Call "internOptional.isPresent()" or "!internOptional.isEmpty()" before accessing the value.(—ÇÎµ8‚•õ¨à1
+]	java:S125"<This block of commented-out lines of code should be removed.(ý†«¹úÿÿÿÿ8…•õ¨à1
+`
+java:S1854D">Remove this useless assignment to local variable "supervisor".(‡ù¶Âüÿÿÿÿ8ˆ•õ¨à1
+]	java:S125C"<This block of commented-out lines of code should be removed.(Á¹ïûøÿÿÿÿ8ˆ•õ¨à1
+Q
+java:S1481D"/Remove this unused "supervisor" local variable.(‡ù¶Âüÿÿÿÿ8‰•õ¨à1
+]	java:S125E"<This block of commented-out lines of code should be removed.(‡Ó¾ùÿÿÿÿ8‰•õ¨à1
+X	java:S125I"<This block of commented-out lines of code should be removed.(ÕËÑ8‰•õ¨à1
