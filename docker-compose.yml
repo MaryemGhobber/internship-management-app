@@ -1,0 +1,106 @@
+version: '2.9'
+
+services:
+  internship-management-discovery-service:
+    container_name: internship-management-discovery-service
+    build: ./discovery-service
+    ports:
+      - '8761:8761'
+    expose:
+      - '8761'
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8761/actuator/health"]
+      interval: 10s
+
+
+  internship-management-config-service:
+    container_name: internship-management-config-service
+    build: ./config-service
+    ports:
+      - '9999:9999'
+    expose:
+      - '9999'
+    environment:
+      - DISCOVERY_SERVICE_URL=http://internship-management-discovery-service:8761/eureka
+    depends_on:
+      internship-management-discovery-service:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9999/actuator/health" ]
+
+
+  internship-management-supervisor-service:
+    container_name: internship-management-supervisor-service
+    build: ./supervisor-service
+    ports:
+      - '8082:8082'
+    expose:
+      - '8082'
+    environment:
+      - DISCOVERY_SERVICE_URL=http://internship-management-discovery-service:8761/eureka
+      - CONFIG_SERVICE_URL=http://internship-management-config-service:9999
+      - DATABASE_URL1=jdbc:postgresql://postgres_supervisor:5432/supervisorDb
+    depends_on:
+      internship-management-config-service:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8082/actuator/health" ]
+
+
+  internship-management-internship-service:
+    container_name: internship-management-internship-service
+    build: ./internship-service
+    ports:
+      - '8081:8081'
+    expose:
+      - '8081'
+    environment:
+      - DISCOVERY_SERVICE_URL=http://internship-management-discovery-service:8761/eureka
+      - CONFIG_SERVICE_URL=http://internship-management-config-service:9999
+      - DATABASE_URL2=jdbc:postgresql://postgres_internship:5432/internshipDb
+    depends_on:
+      internship-management-supervisor-service:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8081/actuator/health" ]
+
+
+  internship-management-gateway-service:
+    container_name: internship-management-gateway-service
+    build: ./gateway-service
+    ports:
+      - '8888:8888'
+    expose:
+      - '8888'
+    environment:
+      - DISCOVERY_SERVICE_URL=http://internship-management-discovery-service:8761/eureka
+      - CONFIG_SERVICE_URL=http://internship-management-config-service:9999
+    depends_on:
+      internship-management-config-service:
+        condition: service_healthy
+
+  postgres_internship:
+    image: "postgres:14.1-alpine"
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_internship_data:/var/lib/postgresql/data
+    environment:
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: admin
+      DATABASE_DB: internshipDb
+    # Base de données PostgreSQL pour Supervisor service
+  postgres_supervisor:
+    image: "postgres:14.1-alpine"
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_supervisor_data:/var/lib/postgresql/data
+    environment:
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: admin
+      DATABASE_DB: supervisorDb
+    # Volumes
+volumes:
+  postgres_internship_data:
+  postgres_supervisor_data:
